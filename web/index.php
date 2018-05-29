@@ -90,7 +90,7 @@ $app->get('/room/:name', 'cors', function($name) use ($app) {
         
         // generate token
 		$sessionid = $session->getSessionId();
-        $token = $app->opentok->generateToken($sessionid,array('role' => Role::PUBLISHER));
+        $token = $app->opentok->generateToken($sessionid,array('role' => RoleConstants::PUBLISHER));
         $responseData = array(
             'apiKey' => $app->apiKey,
             'sessionId' => $session->getSessionId(),
